@@ -1,40 +1,26 @@
-document.documentElement.classList.add("js");
+// Entrance reveal: default (no-JS) state is fully visible; adding
+// .is-ready opts into the one-time staggered fade-up defined in CSS.
+document.documentElement.classList.add("is-ready");
 
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
-const revealItems = document.querySelectorAll("[data-reveal]");
-
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "0px 0px -10%", threshold: 0.08 },
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
-
-const form = document.querySelector(".waitlist-form");
+const form = document.querySelector(".waitlist");
 
 if (form) {
-  const button = form.querySelector("button");
-  const buttonCopy = form.querySelector(".button-copy");
+  const pill = form.querySelector(".pill");
+  const microcopy = form.querySelector(".form-microcopy");
+  const button = form.querySelector("button[type='submit']");
   const status = form.querySelector(".form-status");
-  const formRow = form.querySelector(".form-row");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (button.disabled) return;
+
     button.disabled = true;
-    buttonCopy.textContent = "Sending";
+    button.textContent = "Sending…";
     status.hidden = true;
     status.classList.remove("error");
 
@@ -48,16 +34,27 @@ if (form) {
 
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-      formRow.hidden = true;
-      form.querySelector("label[for='email']").hidden = true;
-      status.textContent = "Registered — you’re on the list.";
+      // Morph in place: fade the pill + microcopy out, then replace
+      // them with the confirmation. Removing the interactive form
+      // controls prevents double submits.
+      pill.classList.add("is-leaving");
+      microcopy.classList.add("is-leaving");
+      await new Promise((resolve) =>
+        setTimeout(resolve, reducedMotion.matches ? 0 : 250),
+      );
+      pill.remove();
+      microcopy.remove();
+
+      status.classList.add("form-confirm");
+      status.innerHTML =
+        '<span aria-hidden="true">✓ </span>You’re on the list. One email when results go live.';
       status.hidden = false;
-      form.reset();
     } catch (_) {
       button.disabled = false;
-      buttonCopy.textContent = "Join waitlist";
-      status.textContent = "Something went wrong — please try again.";
+      button.textContent = "Notify me";
       status.classList.add("error");
+      status.innerHTML =
+        "Something went wrong — please try again, or email <a href=\"mailto:contact@web3evals.com\">contact@web3evals.com</a>.";
       status.hidden = false;
     }
   });

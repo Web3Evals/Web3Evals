@@ -6,23 +6,19 @@
 
 html {
   min-width: 320px;
-  scroll-behavior: smooth;
-  scroll-padding-top: 96px;
   background: var(--bg);
 }
 
 body {
   min-width: 320px;
   margin: 0;
-  overflow-x: hidden;
   background: var(--bg);
-  color: var(--fg);
+  color: var(--cream);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-body,
 button,
 input {
   font: inherit;
@@ -39,11 +35,7 @@ svg {
 }
 
 h1,
-h2,
-h3,
-p,
-dl,
-dd {
+p {
   margin: 0;
 }
 
@@ -57,55 +49,39 @@ button {
 }
 
 ::selection {
-  background: var(--fg);
+  background: var(--cream);
   color: var(--ink);
 }
 
 :focus-visible {
-  outline: 1px solid var(--fg);
-  outline-offset: 4px;
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
 }
 
 [hidden] {
   display: none !important;
 }
 
-.mono {
-  font-family: var(--mono);
-}
-
-.section-shell {
-  width: min(100%, calc(var(--max-width) + (var(--page-pad) * 2)));
-  margin-inline: auto;
-  padding-inline: var(--page-pad);
-}
-
-.skip-link {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 100;
-  padding: 10px 14px;
-  background: var(--fg);
-  color: var(--ink);
-  transform: translateY(-150%);
-}
-
-.skip-link:focus {
-  transform: none;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 50ms !important;
   }
 }
