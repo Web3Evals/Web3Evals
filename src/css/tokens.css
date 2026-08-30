@@ -31,6 +31,33 @@
 }
 
 @font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-400-italic.woff2") format("woff2");
+}
+
+/* Metric-matched fallback for Inter (reduces layout shift while the
+   web font is swapped in). Values from fontpie for Inter vs Arial. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Helvetica");
+  ascent-override: 90.2%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+  size-adjust: 107.4%;
+}
+
+@font-face {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
@@ -46,14 +73,22 @@
   --cream:        #EDE8DF;
   --cream-bright: #F7F3EA;
   --muted:        #A8A199;
-  --faint:        #807A72;
+  --faint:        #8A847C;
   --ink:          #14120F;
   --line:         rgba(237, 232, 223, 0.14);
   --line-soft:    rgba(237, 232, 223, 0.07);
   --glow:         rgba(237, 232, 223, 0.06);
 
+  /* Code (Prism) palette — warm monochrome, all ≥ 4.5:1 on --surface */
+  --code-accent:   #D9B27C;
+  --code-string:   #C8B79A;
+  --code-type:     #C9AE86;
+  --code-comment:  #8E887F;
+  --code-deleted:  #D9A08F;
+  --code-inserted: #B8C8A0;
+
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --sans:  "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans:  "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --max-width: 720px;

@@ -86,6 +86,43 @@ body::after {
   background: var(--cream);
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.site-nav a:hover {
+  color: var(--cream);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--cream);
+}
+
+.site-nav a[aria-current="page"]::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
 /* ── Main column ────────────────────────────────────────── */
 
 .site-main {

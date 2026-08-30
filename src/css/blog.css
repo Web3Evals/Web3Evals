@@ -1,0 +1,708 @@
+/* ── Blog: shared frame ─────────────────────────────────── */
+
+.blog-main,
+.post-main {
+  --measure: 680px;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: min(100%, var(--measure));
+  text-align: left;
+}
+
+.page-blog .site-main {
+  padding-block: clamp(40px, 6vh, 72px) clamp(48px, 8vh, 96px);
+}
+
+.page-blog h1,
+.page-blog h2,
+.page-blog h3,
+.page-blog h4,
+.page-blog h5,
+.page-blog h6 {
+  margin: 0;
+}
+
+/* ── Blog index ─────────────────────────────────────────── */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.blog-title {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--cream-bright);
+  text-wrap: balance;
+}
+
+.blog-intro {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.post-list {
+  list-style: none;
+  margin: clamp(36px, 6vh, 56px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.post-row {
+  position: relative;
+  padding: 26px 0 28px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.post-row-date {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.post-row-title {
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--cream);
+  transition: color var(--transition);
+}
+
+.post-row-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Whole row is the hit area: the link's ::after covers the row. */
+.post-row-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.post-row:hover .post-row-title {
+  color: var(--cream-bright);
+}
+
+.post-row:has(a:focus-visible) {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.post-row .post-row-title a:focus-visible {
+  outline: none;
+}
+
+.post-row-desc {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.blog-empty {
+  margin-top: clamp(36px, 6vh, 56px);
+  padding-top: 26px;
+  border-top: 1px solid var(--line-soft);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ── Post header ────────────────────────────────────────── */
+
+.post-date {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.post-title {
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--cream-bright);
+  text-wrap: balance;
+}
+
+.post-desc {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.post-head {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+/* ── Post body ──────────────────────────────────────────── */
+
+.post-body {
+  margin-top: 36px;
+  font-size: clamp(17px, 1.1vw + 14px, 18px);
+  line-height: 1.65;
+  color: var(--cream);
+  overflow-wrap: break-word;
+}
+
+.post-body > * + * {
+  margin-top: 1.25em;
+}
+
+.post-body p {
+  margin: 0;
+}
+
+.post-body > p + p {
+  margin-top: 1.25em;
+}
+
+.post-body h2,
+.post-body h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--cream-bright);
+}
+
+.post-body h2 {
+  margin-top: 2em;
+  font-size: 32px;
+}
+
+.post-body h3 {
+  margin-top: 1.6em;
+  font-size: 25px;
+}
+
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  margin-top: 1.5em;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.4;
+  color: var(--cream-bright);
+}
+
+.post-body h2 + *,
+.post-body h3 + *,
+.post-body h4 + * {
+  margin-top: 0.7em;
+}
+
+.post-body strong,
+.post-body b {
+  font-weight: 600;
+}
+
+.post-body em,
+.post-body i,
+.post-body cite {
+  font-style: italic;
+}
+
+.post-body a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition);
+}
+
+.post-body a:hover {
+  text-decoration-color: var(--cream);
+}
+
+.post-body blockquote {
+  margin: 1.25em 0;
+  padding: 2px 0 2px 20px;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post-body blockquote > * + * {
+  margin-top: 0.75em;
+}
+
+.post-body hr {
+  height: 0;
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+
+.post-body li {
+  padding-left: 0.25em;
+}
+
+.post-body li + li {
+  margin-top: 0.4em;
+}
+
+.post-body li::marker {
+  color: var(--faint);
+}
+
+.post-body ol li::marker {
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+.post-body ul ul,
+.post-body ol ol,
+.post-body ul ol,
+.post-body ol ul {
+  margin: 0.4em 0 0;
+}
+
+/* ── Code ───────────────────────────────────────────────── */
+
+.post-body code,
+.post-body kbd,
+.post-body samp {
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
+.post-body :not(pre) > code {
+  padding: 0.1em 0.4em;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.post-body pre {
+  position: relative;
+  margin: 1.5em 0;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cream);
+  tab-size: 4;
+}
+
+.post-body pre code {
+  display: block;
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* Language label, from the fence info string. */
+.post-body pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--code-comment);
+  pointer-events: none;
+}
+
+.post-body pre[data-language="text"]::before,
+.post-body pre[data-language="plain"]::before,
+.post-body pre[data-language="plaintext"]::before {
+  content: none;
+}
+
+/* Prism tokens — warm monochrome */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+.token.punctuation,
+.token.operator,
+.token.entity,
+.token.url,
+.token.coord {
+  color: var(--muted);
+}
+
+.token.keyword,
+.token.atrule,
+.token.selector,
+.token.important,
+.token.version,
+.token.tag {
+  color: var(--code-accent);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.symbol {
+  color: var(--code-string);
+}
+
+.token.number,
+.token.constant,
+.token.boolean,
+.token.function,
+.token.class-name,
+.token.attr-name,
+.token.property,
+.token.macro,
+.token.type-definition,
+.token.namespace {
+  color: var(--cream-bright);
+}
+
+.token.builtin,
+.token.type,
+.token.lifetime-annotation,
+.token.variable,
+.token.parameter,
+.token.environment,
+.token.attribute {
+  color: var(--code-type);
+}
+
+.token.deleted {
+  color: var(--code-deleted);
+}
+
+.token.inserted {
+  color: var(--code-inserted);
+}
+
+.token.bold {
+  font-weight: 600;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+/* ── Images ─────────────────────────────────────────────── */
+
+.post-body figure {
+  margin: 1.75em 0;
+}
+
+.post-body figure img,
+.post-body > img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+}
+
+.post-body figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── Tables ─────────────────────────────────────────────── */
+
+.post-body .table-wrap {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-body table {
+  width: 100%;
+  min-width: max-content;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.post-body th,
+.post-body td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.post-body th:first-child,
+.post-body td:first-child {
+  padding-left: 0;
+}
+
+.post-body th:last-child,
+.post-body td:last-child {
+  padding-right: 0;
+}
+
+.post-body th {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  border-bottom-color: var(--line);
+}
+
+.post-body td {
+  font-variant-numeric: tabular-nums;
+}
+
+.post-body .align-right {
+  text-align: right;
+}
+
+.post-body .align-center {
+  text-align: center;
+}
+
+/* ── Footnotes ──────────────────────────────────────────── */
+
+.post-body .footnote-ref,
+.post-body .footnote-backref {
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+.post-body .footnote-ref {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  padding-left: 1px;
+}
+
+.post-body .footnote-ref a,
+.post-body sup a {
+  text-decoration: none;
+}
+
+.post-body .footnotes {
+  margin-top: 3em;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.post-body .footnotes-sep {
+  display: none;
+}
+
+.post-body .footnotes-list {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.post-body .footnotes-list li::marker {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--faint);
+}
+
+.post-body .footnote-item p {
+  display: inline;
+}
+
+.post-body .footnote-backref {
+  margin-left: 4px;
+  color: var(--faint);
+}
+
+/* ── Math (MathJax SVG output) ──────────────────────────── */
+
+/* These replace the stylesheet MathJax would normally inject. */
+mjx-container[jax="SVG"] {
+  direction: ltr;
+  font-size: 1.05em;
+}
+
+mjx-container[jax="SVG"] > svg {
+  display: inline-block;
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+  vertical-align: -0.4ex;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  margin: 1.25em 0;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+mjx-container[jax="SVG"][display="true"] > svg {
+  margin-inline: auto;
+  vertical-align: middle;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+/* Inline equations: MathJax emits style="vertical-align:-N.NNex" on each
+   <svg>; the build converts that to one of these classes (nearest 0.25ex)
+   so no inline styles are needed. */
+svg.mjx-va-p1-00 { vertical-align: 1ex; }
+svg.mjx-va-p0-75 { vertical-align: 0.75ex; }
+svg.mjx-va-p0-50 { vertical-align: 0.5ex; }
+svg.mjx-va-p0-25 { vertical-align: 0.25ex; }
+svg.mjx-va-0-00 { vertical-align: 0; }
+svg.mjx-va-m0-25 { vertical-align: -0.25ex; }
+svg.mjx-va-m0-50 { vertical-align: -0.5ex; }
+svg.mjx-va-m0-75 { vertical-align: -0.75ex; }
+svg.mjx-va-m1-00 { vertical-align: -1ex; }
+svg.mjx-va-m1-25 { vertical-align: -1.25ex; }
+svg.mjx-va-m1-50 { vertical-align: -1.5ex; }
+svg.mjx-va-m1-75 { vertical-align: -1.75ex; }
+svg.mjx-va-m2-00 { vertical-align: -2ex; }
+svg.mjx-va-m2-25 { vertical-align: -2.25ex; }
+svg.mjx-va-m2-50 { vertical-align: -2.5ex; }
+svg.mjx-va-m2-75 { vertical-align: -2.75ex; }
+svg.mjx-va-m3-00 { vertical-align: -3ex; }
+svg.mjx-va-m3-25 { vertical-align: -3.25ex; }
+svg.mjx-va-m3-50 { vertical-align: -3.5ex; }
+svg.mjx-va-m3-75 { vertical-align: -3.75ex; }
+svg.mjx-va-m4-00 { vertical-align: -4ex; }
+
+mjx-assistive-mml {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0 0 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  display: block;
+}
+
+/* ── Prev / next ────────────────────────────────────────── */
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: clamp(40px, 6vh, 64px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.post-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--cream);
+  transition: color var(--transition);
+}
+
+.post-nav-link:hover {
+  color: var(--cream-bright);
+}
+
+.post-nav-newer {
+  grid-column: 2;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.post-nav-older {
+  grid-column: 1;
+}
+
+.post-nav-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.post-nav-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .post-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .post-nav-newer,
+  .post-nav-older {
+    grid-column: 1;
+  }
+
+  .post-nav-newer {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .post-body h2 {
+    font-size: 28px;
+  }
+
+  .post-body h3 {
+    font-size: 23px;
+  }
+
+  .post-row-title {
+    font-size: 25px;
+  }
+}

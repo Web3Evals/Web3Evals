@@ -1,0 +1,51 @@
+---
+layout: layouts/home.njk
+permalink: /
+title: "Web3Evals — Independent evaluations for Web3"
+description: "Independent, reproducible evaluations of LLMs and agentic systems on original, real-world Web3 security tasks. First release: SCAR."
+ogDescription: "Measuring LLMs and agentic systems on original, real-world Web3 security tasks."
+ogImage: /images/og-2.png
+ogImageAlt: "Web3Evals — Coming soon"
+---
+      <p class="badge reveal reveal-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        First release · SCAR v1
+      </p>
+
+      <h1 class="headline reveal reveal-headline">Coming <em>soon.</em></h1>
+
+      <p class="subline reveal reveal-subline">
+        Measuring LLMs on original, real-world Web3 security tasks.
+      </p>
+
+      <form
+        class="waitlist reveal reveal-form"
+        name="waitlist"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="waitlist" />
+        <p class="honeypot" aria-hidden="true">
+          <label
+            >Don’t fill this out if you’re human:
+            <input name="bot-field" tabindex="-1" autocomplete="off"
+          /></label>
+        </p>
+        <label class="visually-hidden" for="email">Email address</label>
+        <div class="pill">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+            autocomplete="email"
+            inputmode="email"
+          />
+          <button type="submit">Notify me</button>
+        </div>
+        <p class="form-microcopy">One email when results go live. No spam.</p>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
+      </form>

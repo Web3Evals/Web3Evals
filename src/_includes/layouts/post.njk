@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+isBlog: true
+isPost: true
+---
+{#- collections.posts is newest-first; "older" is the next item, "newer" the previous -#}
+{%- set older = null -%}
+{%- set newer = null -%}
+{%- for p in collections.posts -%}
+  {%- if p.url == page.url -%}
+    {%- if not loop.first -%}{%- set newer = collections.posts[loop.index0 - 1] -%}{%- endif -%}
+    {%- if not loop.last -%}{%- set older = collections.posts[loop.index0 + 1] -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+    <main class="site-main post-main" id="main">
+      <article class="post">
+        <header class="post-head">
+          <time class="post-date" datetime="{{ page.date | dateIso }}">{{ page.date | dateShort }}</time>
+          <h1 class="post-title">{{ title }}</h1>
+          <p class="post-desc">{{ description }}</p>
+        </header>
+
+        <div class="post-body">
+{{ content | safe }}
+        </div>
+      </article>
+
+      {%- if older or newer %}
+      <nav class="post-nav" aria-label="Post navigation">
+        {%- if older %}
+        <a class="post-nav-link post-nav-older" href="{{ older.url }}">
+          <span class="post-nav-label">← Older</span>
+          <span class="post-nav-title">{{ older.data.title }}</span>
+        </a>
+        {%- endif %}
+        {%- if newer %}
+        <a class="post-nav-link post-nav-newer" href="{{ newer.url }}">
+          <span class="post-nav-label">Newer →</span>
+          <span class="post-nav-title">{{ newer.data.title }}</span>
+        </a>
+        {%- endif %}
+      </nav>
+      {%- endif %}
+    </main>

@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+isBlog: true
+---
+    <main class="site-main blog-main" id="main">
+      <header class="blog-head">
+        <p class="eyebrow">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Writing
+        </p>
+        <h1 class="blog-title">{{ site.blog.heading }}</h1>
+        {%- if site.blog.intro %}
+        <p class="blog-intro">{{ site.blog.intro }}</p>
+        {%- endif %}
+      </header>
+
+      {%- if collections.posts.length %}
+      <ul class="post-list" role="list">
+        {%- for post in collections.posts %}
+        <li>
+          <article class="post-row">
+            <time class="post-row-date" datetime="{{ post.date | dateIso }}">{{ post.date | dateShort }}</time>
+            <h2 class="post-row-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <p class="post-row-desc">{{ post.data.description }}</p>
+          </article>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- else %}
+      <p class="blog-empty">First post coming soon.</p>
+      {%- endif %}
+    </main>

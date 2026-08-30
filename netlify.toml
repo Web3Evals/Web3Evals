@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  ELEVENTY_ENV = "production"
+
+# Deploy Previews and branch deploys render drafts and future-dated posts
+# so they can be reviewed before they go live.
+[context.deploy-preview.environment]
+  ELEVENTY_ENV = "preview"
+
+[context.branch-deploy.environment]
+  ELEVENTY_ENV = "preview"
