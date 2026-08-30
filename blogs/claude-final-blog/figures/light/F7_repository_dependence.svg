@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="723.24pt" height="566.4096pt" viewBox="0 0 723.24 566.4096" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-26T14:56:15.035152</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 566.4096 
+L 723.24 566.4096 
+L 723.24 0 
+L 0 0 
+z
+" style="fill: #fcfcfb"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 199.08 493.056 
+L 698.04 493.056 
+L 698.04 110.016 
+L 199.08 110.016 
+z
+" style="fill: #fcfcfb"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 205.7328 146.78784 
+L 358.7472 146.78784 
+L 358.7472 111.54816 
+L 205.7328 111.54816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 372.0528 146.78784 
+L 525.0672 146.78784 
+L 525.0672 111.54816 
+L 372.0528 111.54816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 538.3728 146.78784 
+L 691.3872 146.78784 
+L 691.3872 111.54816 
+L 538.3728 111.54816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #1c5cab"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 205.7328 185.09184 
+L 358.7472 185.09184 
+L 358.7472 149.85216 
+L 205.7328 149.85216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 372.0528 185.09184 
+L 525.0672 185.09184 
+L 525.0672 149.85216 
+L 372.0528 149.85216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 538.3728 185.09184 
+L 691.3872 185.09184 
+L 691.3872 149.85216 
+L 538.3728 149.85216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 205.7328 223.39584 
+L 358.7472 223.39584 
+L 358.7472 188.15616 
+L 205.7328 188.15616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #f0efec"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 372.0528 223.39584 
+L 525.0672 223.39584 
+L 525.0672 188.15616 
+L 372.0528 188.15616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 538.3728 223.39584 
+L 691.3872 223.39584 
+L 691.3872 188.15616 
+L 538.3728 188.15616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 205.7328 261.69984 
+L 358.7472 261.69984 
+L 358.7472 226.46016 
+L 205.7328 226.46016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 372.0528 261.69984 
+L 525.0672 261.69984 
+L 525.0672 226.46016 
+L 372.0528 226.46016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 538.3728 261.69984 
+L 691.3872 261.69984 
+L 691.3872 226.46016 
+L 538.3728 226.46016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 205.7328 300.00384 
+L 358.7472 300.00384 
+L 358.7472 264.76416 
+L 205.7328 264.76416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 372.0528 300.00384 
+L 525.0672 300.00384 
+L 525.0672 264.76416 
+L 372.0528 264.76416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 538.3728 300.00384 
+L 691.3872 300.00384 
+L 691.3872 264.76416 
+L 538.3728 264.76416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 205.7328 338.30784 
+L 358.7472 338.30784 
+L 358.7472 303.06816 
+L 205.7328 303.06816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 372.0528 338.30784 
+L 525.0672 338.30784 
+L 525.0672 303.06816 
+L 372.0528 303.06816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 538.3728 338.30784 
+L 691.3872 338.30784 
+L 691.3872 303.06816 
+L 538.3728 303.06816 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 205.7328 376.61184 
+L 358.7472 376.61184 
+L 358.7472 341.37216 
+L 205.7328 341.37216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 372.0528 376.61184 
+L 525.0672 376.61184 
+L 525.0672 341.37216 
+L 372.0528 341.37216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 538.3728 376.61184 
+L 691.3872 376.61184 
+L 691.3872 341.37216 
+L 538.3728 341.37216 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 205.7328 414.91584 
+L 358.7472 414.91584 
+L 358.7472 379.67616 
+L 205.7328 379.67616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 372.0528 414.91584 
+L 525.0672 414.91584 
+L 525.0672 379.67616 
+L 372.0528 379.67616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 538.3728 414.91584 
+L 691.3872 414.91584 
+L 691.3872 379.67616 
+L 538.3728 379.67616 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 205.7328 453.21984 
+L 358.7472 453.21984 
+L 358.7472 417.98016 
+L 205.7328 417.98016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 372.0528 453.21984 
+L 525.0672 453.21984 
+L 525.0672 417.98016 
+L 372.0528 417.98016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 538.3728 453.21984 
+L 691.3872 453.21984 
+L 691.3872 417.98016 
+L 538.3728 417.98016 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #7fb0ec"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 205.7328 491.52384 
+L 358.7472 491.52384 
+L 358.7472 456.28416 
+L 205.7328 456.28416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #f0efec"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 372.0528 491.52384 
+L 525.0672 491.52384 
+L 525.0672 456.28416 
+L 372.0528 456.28416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #bcd6f5"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 538.3728 491.52384 
+L 691.3872 491.52384 
+L 691.3872 456.28416 
+L 538.3728 456.28416 
+z
+" clip-path="url(#p7bfedece29)" style="fill: #3f86dc"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(266.659531 504.429594)">reNFT</text>
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(257.175469 516.225031)">(6 groups)</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(435.720937 504.429594)">Noya</text>
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(420.436953 516.353937)">(14 groups)</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(590.117109 504.429594)">BendDAO</text>
+      <text style="fill: #52514e; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(589.815469 516.225031)">(7 groups)</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="fill: #0b0b0b; font: 700 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="133.104797" transform="rotate(-0 195.58 133.104797)">C8  Full combined</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="171.475828" transform="rotate(-0 195.58 171.475828)">C7  Taxonomy headers only</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="fill: #0b0b0b; font: 700 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="209.779828" transform="rotate(-0 195.58 209.779828)">C3  + Output schema</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="248.083828" transform="rotate(-0 195.58 248.083828)">C2  + Methodology</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="286.387828" transform="rotate(-0 195.58 286.387828)">C5  Lean taxonomy</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="324.691828" transform="rotate(-0 195.58 324.691828)">C6  Detailed taxonomy</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="362.995828" transform="rotate(-0 195.58 362.995828)">C9  Length-matched generic</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="401.299828" transform="rotate(-0 195.58 401.299828)">C1  + Role / persona</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="439.603828" transform="rotate(-0 195.58 439.603828)">C0  Minimal general</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_13"/>
+     <g id="text_13">
+      <text style="fill: #0b0b0b; font: 11px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="195.58" y="477.907828" transform="rotate(-0 195.58 477.907828)">C4  + Evidence requirement</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_14">
+    <text style="fill: #0b0b0b; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="132.149016" transform="rotate(-0 282.24 132.149016)">2 / 0</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #0b0b0b; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="132.149016" transform="rotate(-0 448.56 132.149016)">3 / 1</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #ffffff; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="132.149016" transform="rotate(-0 614.88 132.149016)">5 / 1</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="170.44493" transform="rotate(-0 282.24 170.44493)">2 / 0</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="170.44493" transform="rotate(-0 448.56 170.44493)">5 / 2</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="170.44493" transform="rotate(-0 614.88 170.44493)">2 / 1</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #52514e; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="208.757016" transform="rotate(-0 282.24 208.757016)">0 / 0</text>
+   </g>
+   <g id="text_21">
+    <text style="fill: #0b0b0b; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="208.757016" transform="rotate(-0 448.56 208.757016)">5 / 4</text>
+   </g>
+   <g id="text_22">
+    <text style="fill: #0b0b0b; font: 700 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="208.757016" transform="rotate(-0 614.88 208.757016)">3 / 2</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="247.05293" transform="rotate(-0 282.24 247.05293)">1 / 0</text>
+   </g>
+   <g id="text_24">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="247.05293" transform="rotate(-0 448.56 247.05293)">4 / 2</text>
+   </g>
+   <g id="text_25">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="247.05293" transform="rotate(-0 614.88 247.05293)">3 / 1</text>
+   </g>
+   <g id="text_26">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="285.35693" transform="rotate(-0 282.24 285.35693)">2 / 0</text>
+   </g>
+   <g id="text_27">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="285.35693" transform="rotate(-0 448.56 285.35693)">4 / 2</text>
+   </g>
+   <g id="text_28">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="285.35693" transform="rotate(-0 614.88 285.35693)">2 / 1</text>
+   </g>
+   <g id="text_29">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="323.66093" transform="rotate(-0 282.24 323.66093)">1 / 0</text>
+   </g>
+   <g id="text_30">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="323.66093" transform="rotate(-0 448.56 323.66093)">3 / 2</text>
+   </g>
+   <g id="text_31">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="323.66093" transform="rotate(-0 614.88 323.66093)">3 / 2</text>
+   </g>
+   <g id="text_32">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="361.96493" transform="rotate(-0 282.24 361.96493)">1 / 0</text>
+   </g>
+   <g id="text_33">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="361.96493" transform="rotate(-0 448.56 361.96493)">4 / 3</text>
+   </g>
+   <g id="text_34">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="361.96493" transform="rotate(-0 614.88 361.96493)">2 / 1</text>
+   </g>
+   <g id="text_35">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="400.26893" transform="rotate(-0 282.24 400.26893)">1 / 0</text>
+   </g>
+   <g id="text_36">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="400.26893" transform="rotate(-0 448.56 400.26893)">3 / 1</text>
+   </g>
+   <g id="text_37">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="400.26893" transform="rotate(-0 614.88 400.26893)">2 / 2</text>
+   </g>
+   <g id="text_38">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="438.57293" transform="rotate(-0 282.24 438.57293)">1 / 0</text>
+   </g>
+   <g id="text_39">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="438.57293" transform="rotate(-0 448.56 438.57293)">2 / 1</text>
+   </g>
+   <g id="text_40">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="438.57293" transform="rotate(-0 614.88 438.57293)">3 / 1</text>
+   </g>
+   <g id="text_41">
+    <text style="fill: #52514e; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="282.24" y="476.87693" transform="rotate(-0 282.24 476.87693)">0 / 0</text>
+   </g>
+   <g id="text_42">
+    <text style="fill: #0b0b0b; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="448.56" y="476.87693" transform="rotate(-0 448.56 476.87693)">2 / 0</text>
+   </g>
+   <g id="text_43">
+    <text style="fill: #ffffff; font: 11.5px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: middle" x="614.88" y="476.87693" transform="rotate(-0 614.88 476.87693)">4 / 2</text>
+   </g>
+  </g>
+  <g id="patch_33">
+   <path d="M 471.24 534.096 
+L 497.7 534.096 
+L 497.7 523.152 
+L 471.24 523.152 
+z
+" style="fill: #f0efec"/>
+  </g>
+  <g id="patch_34">
+   <path d="M 509.04 534.096 
+L 535.5 534.096 
+L 535.5 523.152 
+L 509.04 523.152 
+z
+" style="fill: #bcd6f5"/>
+  </g>
+  <g id="patch_35">
+   <path d="M 546.84 534.096 
+L 573.3 534.096 
+L 573.3 523.152 
+L 546.84 523.152 
+z
+" style="fill: #7fb0ec"/>
+  </g>
+  <g id="patch_36">
+   <path d="M 584.64 534.096 
+L 611.1 534.096 
+L 611.1 523.152 
+L 584.64 523.152 
+z
+" style="fill: #3f86dc"/>
+  </g>
+  <g id="patch_37">
+   <path d="M 622.44 534.096 
+L 648.9 534.096 
+L 648.9 523.152 
+L 622.44 523.152 
+z
+" style="fill: #1c5cab"/>
+  </g>
+  <g id="text_44">
+   <text style="fill: #52514e; font: 9px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: end" x="467.46" y="531.005484" transform="rotate(-0 467.46 531.005484)">union recall within repo:  0%</text>
+  </g>
+  <g id="text_45">
+   <text style="fill: #52514e; font: 9px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: start" x="660.24" y="530.950641" transform="rotate(-0 660.24 530.950641)">≥70%</text>
+  </g>
+  <g id="text_46">
+   <text style="fill: #0b0b0b; font: 700 16px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: start" x="32.76" y="36.6525" transform="rotate(-0 32.76 36.6525)">Recall depended strongly on the repository</text>
+  </g>
+  <g id="text_47">
+   <text style="fill: #52514e; font: 10px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(32.76 57.103687)">Cell = union / majority group counts for that repository. Colour = union recall within the repository.</text>
+   <text style="fill: #52514e; font: 10px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'" transform="translate(32.76 69.399937)">reNFT was nearly a desert for every prompt; no condition reproduced a reNFT bug in two of three runs.</text>
+  </g>
+  <g id="text_48">
+   <text style="fill: #8a8985; font: 8px 'Arial', 'Helvetica Neue', 'Helvetica', 'DejaVu Sans'; text-anchor: start" x="25.2" y="539.52585" transform="rotate(-0 25.2 539.52585)">deepseek-v4-flash-0731 · 3 repositories × 3 replicates per condition · 27 consolidated golden bug groups · readjudication full-text + recovery arm</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7bfedece29">
+   <rect x="199.08" y="110.016" width="498.96" height="383.04"/>
+  </clipPath>
+ </defs>
+</svg>
