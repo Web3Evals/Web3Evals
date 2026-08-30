@@ -70,20 +70,11 @@ body::after {
   color: var(--cream-bright);
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid var(--cream);
-  border-radius: 50%;
-}
-
-.brand-mark span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--cream);
+.brand-logo {
+  display: block;
+  flex: none;
+  width: 20px;
+  height: auto;
 }
 
 .site-nav {

@@ -20,6 +20,7 @@ const CREAM_BRIGHT = "#F7F3EA";
 const FAINT = "#807A72";
 
 let fontCache = null;
+let logoCache = null;
 
 async function loadFonts(fontsDir) {
   if (fontCache) return fontCache;
@@ -37,6 +38,15 @@ async function loadFonts(fontsDir) {
   return fontCache;
 }
 
+async function loadLogo() {
+  if (logoCache) return logoCache;
+  const logo = await fs.readFile(
+    new URL("../src/images/logo.png", import.meta.url),
+  );
+  logoCache = `data:image/png;base64,${logo.toString("base64")}`;
+  return logoCache;
+}
+
 const h = (type, props = {}, ...children) => {
   const node = { type, props: { ...props } };
   if (children.length === 1) node.props.children = children[0];
@@ -44,7 +54,7 @@ const h = (type, props = {}, ...children) => {
   return node;
 };
 
-function layout({ title, date }) {
+function layout({ title, date, logoSrc }) {
   return h(
     "div",
     {
@@ -66,23 +76,13 @@ function layout({ title, date }) {
     h(
       "div",
       { style: { display: "flex", alignItems: "center", gap: 14 } },
-      h(
-        "div",
-        {
-          style: {
-            width: 26,
-            height: 26,
-            borderRadius: 13,
-            border: `2px solid ${CREAM}`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          },
-        },
-        h("div", {
-          style: { width: 9, height: 9, borderRadius: 5, backgroundColor: CREAM },
-        }),
-      ),
+      h("img", {
+        src: logoSrc,
+        width: 29,
+        height: 27,
+        alt: "",
+        style: { display: "flex" },
+      }),
       h(
         "div",
         { style: { fontSize: 26, fontWeight: 500, letterSpacing: "0.01em" } },
@@ -143,7 +143,7 @@ export async function generateOgImage({
 }) {
   const key = crypto
     .createHash("sha1")
-    .update(JSON.stringify({ v: 1, slug, title, description, date }))
+    .update(JSON.stringify({ v: 2, slug, title, description, date }))
     .digest("hex");
   const cached = path.join(cacheDir, `${key}.png`);
   const out = path.join(outputDir, `${slug}.png`);
@@ -156,8 +156,8 @@ export async function generateOgImage({
     return out;
   }
 
-  const fonts = await loadFonts(fontsDir);
-  const svg = await satori(layout({ title, date }), {
+  const [fonts, logoSrc] = await Promise.all([loadFonts(fontsDir), loadLogo()]);
+  const svg = await satori(layout({ title, date, logoSrc }), {
     width: WIDTH,
     height: HEIGHT,
     fonts,
