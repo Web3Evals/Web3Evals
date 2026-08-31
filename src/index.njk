@@ -49,3 +49,12 @@ ogImageAlt: "Web3Evals — Coming soon"
         <p class="form-microcopy">One email when results go live. No spam.</p>
         <p class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
+
+      {% set latestPost = collections.posts | first %}
+      {% if latestPost %}
+      <a class="latest-banner reveal reveal-latest" href="{{ latestPost.url }}">
+        <span class="latest-dot" aria-hidden="true"></span>
+        <span class="latest-text"><strong>Latest research</strong> {{ latestPost.data.title }}</span>
+        <span class="latest-action">Read <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      {% endif %}

@@ -300,6 +300,64 @@ body::after {
   display: none;
 }
 
+/* ── Latest research banner ─────────────────────────────── */
+
+.latest-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 560px;
+  margin-top: clamp(36px, 6vh, 56px);
+  padding: 14px 20px;
+  background: var(--gold-tint);
+  border: 1px solid var(--gold-line);
+  border-radius: 14px;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.latest-banner:hover {
+  background: var(--gold-tint-strong);
+  border-color: var(--gold-line-strong);
+}
+
+.latest-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--code-accent);
+}
+
+.latest-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.latest-text strong {
+  margin-right: 6px;
+  font-weight: 500;
+  color: var(--code-accent);
+}
+
+.latest-action {
+  font-size: 14px;
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+.latest-banner:hover .latest-action {
+  color: var(--cream-bright);
+}
+
 /* ── Footer ─────────────────────────────────────────────── */
 
 .site-footer {
@@ -354,6 +412,7 @@ body::after {
   .is-ready .reveal-headline { animation-delay: 80ms; }
   .is-ready .reveal-subline  { animation-delay: 160ms; }
   .is-ready .reveal-form     { animation-delay: 240ms; }
+  .is-ready .reveal-latest   { animation-delay: 320ms; }
   .is-ready .reveal-frame    { animation-delay: 320ms; }
 }
 

@@ -78,6 +78,10 @@
   --line:         rgba(237, 232, 223, 0.14);
   --line-soft:    rgba(237, 232, 223, 0.07);
   --glow:         rgba(237, 232, 223, 0.06);
+  --gold-line:        rgba(217, 178, 124, 0.28);
+  --gold-line-strong: rgba(217, 178, 124, 0.45);
+  --gold-tint:        rgba(217, 178, 124, 0.06);
+  --gold-tint-strong: rgba(217, 178, 124, 0.1);
 
   /* Code (Prism) palette — warm monochrome, all ≥ 4.5:1 on --surface */
   --code-accent:   #D9B27C;
