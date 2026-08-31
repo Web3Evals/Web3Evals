@@ -70,6 +70,9 @@
     <link rel="stylesheet" href="/css/blog.css" />
     {%- endif %}
     <script src="/js/main.js" defer></script>
+    {%- if isPost %}
+    <script src="/js/post-toc.js" defer></script>
+    {%- endif %}
   </head>
 
   <body{% if isBlog %} class="page-blog"{% endif %}>

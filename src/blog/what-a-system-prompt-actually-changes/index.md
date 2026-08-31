@@ -1,8 +1,37 @@
 ---
+layout: layouts/post-research.njk
 title: "What a system prompt actually changes in an LLM code audit"
 description: "Ten system prompts, one model, three Code4rena codebases, ninety audits. Every prompt read the same code in the same order. What changed was which bugs the model chose to raise, keep, and write up."
 date: 2026-08-31
+kicker: "Research · System prompt ablation"
+readTime: "18 min read"
+toc:
+  - id: "introduction"
+    label: "Introduction"
+  - id: "overview"
+    label: "Overview"
+  - id: "1-breadth-and-repeatability-are-different-properties"
+    label: "1. Breadth vs. repeatability"
+    sub: true
+  - id: "2-naming-a-vulnerability-class-did-not-raise-recall-on-it"
+    label: "2. Naming a class did not help"
+    sub: true
+  - id: "3-prompt-length-bought-nothing"
+    label: "3. Length bought nothing"
+    sub: true
+  - id: "methodology"
+    label: "Methodology"
+  - id: "results"
+    label: "Results"
+  - id: "qualitative-analysis"
+    label: "Qualitative analysis"
+  - id: "limitations-and-future-work"
+    label: "Limitations and future work"
+  - id: "citation"
+    label: "Citation"
 ---
+
+<div id="introduction"></div>
 
 Most LLM auditing tools ship with a long system prompt: a senior-auditor persona, a review methodology, a taxonomy of vulnerability classes with examples, and an evidence standard. These prompts grow the way audit checklists grow. Every missed bug adds a paragraph, and nothing is ever removed. We wanted to know which of those paragraphs change what the model finds.
 
@@ -75,18 +104,25 @@ Each group is labelled listed or omitted according to whether its vulnerability 
 
 Ten prompts. Every prompt shares the same task framing and the same output block (the finding template and the severity rubric), so the ablation is confined to what sits between them. C0 through C4 each add one component. C5 through C8 form the taxonomy ladder. C9 is a length control for C6. Token counts are "as sent": the prompt file as delivered to the model, counted with the model's own tokenizer.
 
-| Condition | Treatment | What it adds | Taxonomy | Tokens |
-| --- | --- | --- | --- | ---: |
-| C0 | Minimal general | Task framing + shared output contract only | None | 477 |
-| C1 | + Role / persona | C0 + 46-word senior-auditor persona | None | 541 |
-| C2 | + Methodology | C0 + 7-step review procedure (map, state, arithmetic, symmetry, safety justification) | None | 1,176 |
-| **C3** | **+ Output schema** | **C0 + reporting requirements: actionable, precisely located, one root cause per finding, justified severity** | **None** | **650** |
-| C4 | + Evidence requirement | C0 + precondition, call trace, missing check, priced impact, self-refutation; do not report without a trace | None | 802 |
-| C5 | Lean taxonomy | C0 + 27 vulnerability classes with one-line mechanism + examples | Lean | 1,737 |
-| C6 | Detailed taxonomy | C0 + 27 classes, each with mechanism, 5 red flags, historical example | Detailed | 6,637 |
-| C7 | Taxonomy headers only | C0 + 27 class headings (with short parentheticals) | Headers | 838 |
-| **C8** | **Full combined** | **Role + task + methodology + detailed taxonomy + evidence requirement** | **Detailed** | **7,719** |
-| C9 | Length-matched generic | C0 + ~6k tokens of secure-development prose, no vulnerability classes (length control for C6) | None | 6,338 |
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th class="id">Condition</th><th>Treatment</th><th>What it adds</th><th>Taxonomy</th><th class="n">Tokens</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="id">C0</td><td class="treat">Minimal general</td><td class="what">Task framing + shared output contract only</td><td>None</td><td class="n">477</td></tr>
+      <tr><td class="id">C1</td><td class="treat">+ Role / persona</td><td class="what">C0 + 46-word senior-auditor persona</td><td>None</td><td class="n">541</td></tr>
+      <tr><td class="id">C2</td><td class="treat">+ Methodology</td><td class="what">C0 + 7-step review procedure (map, state, arithmetic, symmetry, safety justification)</td><td>None</td><td class="n">1,176</td></tr>
+      <tr class="hl"><td class="id">C3</td><td class="treat">+ Output schema</td><td class="what">C0 + reporting requirements: actionable, precisely located, one root cause per finding, justified severity</td><td>None</td><td class="n">650</td></tr>
+      <tr><td class="id">C4</td><td class="treat">+ Evidence requirement</td><td class="what">C0 + precondition, call trace, missing check, priced impact, self-refutation; do not report without a trace</td><td>None</td><td class="n">802</td></tr>
+      <tr><td class="id">C5</td><td class="treat">Lean taxonomy</td><td class="what">C0 + 27 vulnerability classes with one-line mechanism + examples</td><td>Lean</td><td class="n">1,737</td></tr>
+      <tr><td class="id">C6</td><td class="treat">Detailed taxonomy</td><td class="what">C0 + 27 classes, each with mechanism, 5 red flags, historical example</td><td>Detailed</td><td class="n">6,637</td></tr>
+      <tr><td class="id">C7</td><td class="treat">Taxonomy headers only</td><td class="what">C0 + 27 class headings (with short parentheticals)</td><td>Headers</td><td class="n">838</td></tr>
+      <tr class="hl2"><td class="id">C8</td><td class="treat">Full combined</td><td class="what">Role + task + methodology + detailed taxonomy + evidence requirement</td><td>Detailed</td><td class="n">7,719</td></tr>
+      <tr><td class="id">C9</td><td class="treat">Length-matched generic</td><td class="what">C0 + ~6k tokens of secure-development prose, no vulnerability classes (length control for C6)</td><td>None</td><td class="n">6,338</td></tr>
+    </tbody>
+  </table>
+</div>
 
 The C3 addition, in full, is the following block placed between the task framing and the shared output template:
 
@@ -113,18 +149,27 @@ A candidate finding is credited against a golden bug only on root cause. For eac
 
 ## Results
 
-| Condition | Union /27 | Majority /27 | Found 3/3 | Listed /11 | Omitted /16 | Groups/run | Findings /run | Cost /run | Turns | Tool calls | Grep calls |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| C0 | 6 | 2 | 1 | 2 | 4 | 1.00 | 6.9 | $0.076 | 18.4 | 41.8 | 1.7 |
-| C1 | 6 | 3 | 1 | 3 | 3 | 1.11 | 7.4 | $0.067 | 18.7 | 40.6 | 3.1 |
-| C2 | 8 | 3 | 0 | 2 | 6 | 1.22 | 6.9 | $0.069 | 18.4 | 40.1 | 2.8 |
-| **C3** | **8** | **6** | **4** | **2** | **6** | **2.00** | **8.0** | **$0.068** | **18.7** | **41.0** | **2.4** |
-| C4 | 6 | 2 | 0 | 2 | 4 | 0.89 | 5.9 | $0.072 | 18.7 | 41.7 | 2.4 |
-| C5 | 8 | 3 | 3 | 3 | 5 | 1.56 | 10.3 | $0.078 | 18.2 | 42.0 | 3.8 |
-| C6 | 7 | 4 | 2 | 3 | 4 | 1.44 | 9.6 | $0.085 | 20.2 | 43.1 | 5.4 |
-| C7 | 9 | 3 | 3 | 3 | 6 | 1.67 | 10.3 | $0.066 | 17.3 | 39.2 | 1.8 |
-| **C8** | **10** | **2** | **1** | **5** | **5** | **1.44** | **7.6** | **$0.092** | **20.3** | **44.8** | **4.9** |
-| C9 | 7 | 4 | 3 | 3 | 4 | 1.56 | 10.7 | $0.074 | 19.4 | 40.3 | 2.6 |
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th class="id">Condition</th><th class="n">Union /27</th><th class="n">Majority /27</th><th class="n">Found 3/3</th><th class="n">Listed /11</th><th class="n">Omitted /16</th><th class="n">Groups/run</th><th class="n">Findings /run</th><th class="n">Cost /run</th><th class="n">Turns</th><th class="n">Tool calls</th><th class="n">Grep calls</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="id">C0</td><td class="n">6</td><td class="n">2</td><td class="n">1</td><td class="n">2</td><td class="n">4</td><td class="n">1.00</td><td class="n">6.9</td><td class="n">$0.076</td><td class="n">18.4</td><td class="n">41.8</td><td class="n">1.7</td></tr>
+      <tr><td class="id">C1</td><td class="n">6</td><td class="n">3</td><td class="n">1</td><td class="n">3</td><td class="n">3</td><td class="n">1.11</td><td class="n">7.4</td><td class="n">$0.067</td><td class="n">18.7</td><td class="n">40.6</td><td class="n">3.1</td></tr>
+      <tr><td class="id">C2</td><td class="n">8</td><td class="n">3</td><td class="n">0</td><td class="n">2</td><td class="n">6</td><td class="n">1.22</td><td class="n">6.9</td><td class="n">$0.069</td><td class="n">18.4</td><td class="n">40.1</td><td class="n">2.8</td></tr>
+      <tr class="hl"><td class="id">C3</td><td class="n">8</td><td class="n">6</td><td class="n">4</td><td class="n">2</td><td class="n">6</td><td class="n">2.00</td><td class="n">8.0</td><td class="n">$0.068</td><td class="n">18.7</td><td class="n">41.0</td><td class="n">2.4</td></tr>
+      <tr><td class="id">C4</td><td class="n">6</td><td class="n">2</td><td class="n">0</td><td class="n">2</td><td class="n">4</td><td class="n">0.89</td><td class="n">5.9</td><td class="n">$0.072</td><td class="n">18.7</td><td class="n">41.7</td><td class="n">2.4</td></tr>
+      <tr><td class="id">C5</td><td class="n">8</td><td class="n">3</td><td class="n">3</td><td class="n">3</td><td class="n">5</td><td class="n">1.56</td><td class="n">10.3</td><td class="n">$0.078</td><td class="n">18.2</td><td class="n">42.0</td><td class="n">3.8</td></tr>
+      <tr><td class="id">C6</td><td class="n">7</td><td class="n">4</td><td class="n">2</td><td class="n">3</td><td class="n">4</td><td class="n">1.44</td><td class="n">9.6</td><td class="n">$0.085</td><td class="n">20.2</td><td class="n">43.1</td><td class="n">5.4</td></tr>
+      <tr><td class="id">C7</td><td class="n">9</td><td class="n">3</td><td class="n">3</td><td class="n">3</td><td class="n">6</td><td class="n">1.67</td><td class="n">10.3</td><td class="n">$0.066</td><td class="n">17.3</td><td class="n">39.2</td><td class="n">1.8</td></tr>
+      <tr class="hl2"><td class="id">C8</td><td class="n">10</td><td class="n">2</td><td class="n">1</td><td class="n">5</td><td class="n">5</td><td class="n">1.44</td><td class="n">7.6</td><td class="n">$0.092</td><td class="n">20.3</td><td class="n">44.8</td><td class="n">4.9</td></tr>
+      <tr><td class="id">C9</td><td class="n">7</td><td class="n">4</td><td class="n">3</td><td class="n">3</td><td class="n">4</td><td class="n">1.56</td><td class="n">10.7</td><td class="n">$0.074</td><td class="n">19.4</td><td class="n">40.3</td><td class="n">2.6</td></tr>
+    </tbody>
+  </table>
+</div>
 
 A few rows deserve comment beyond the three overview sections.
 

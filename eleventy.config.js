@@ -285,6 +285,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("dateIso", isoDate);
   eleventyConfig.addFilter("absolute", (url) => new URL(url, SITE_URL).href);
   eleventyConfig.addFilter("rtrim", (s) => (typeof s === "string" ? s.replace(/\s+$/, "") : s));
+  // "August 2026" — used by the research post hero meta row.
+  eleventyConfig.addFilter("dateMonthYear", (d) => {
+    const date = d instanceof Date ? d : new Date(d);
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      timeZone: "UTC",
+    }).format(date);
+  });
   eleventyConfig.addFilter("startsWith", (s, prefix) =>
     typeof s === "string" ? s.startsWith(prefix) : false,
   );
