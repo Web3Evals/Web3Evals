@@ -9,7 +9,7 @@
   "blog": {
     "title": "Web3Evals Blog",
     "heading": "Notes on evaluating LLMs for Web3 security.",
-    "intro": "Methods, results, and what we learn building SCAR.",
+    "intro": "Research, methods, results, and what we learn building Web3Evals.",
     "description": "Writing from Web3Evals on evaluating LLMs and agentic systems for Web3 security."
   },
   "social": {
