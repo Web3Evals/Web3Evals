@@ -70,6 +70,9 @@
     <link rel="stylesheet" href="/css/blog.css" />
     {%- endif %}
     <script src="/js/main.js" defer></script>
+    {%- if not env.preview %}
+    <script defer src="/stats/script.js" data-website-id="08fd46bc-466f-42ef-ab80-28b5da81080d" data-host-url="/stats"></script>
+    {%- endif %}
     {%- if isPost %}
     <script src="/js/post-toc.js" defer></script>
     {%- endif %}

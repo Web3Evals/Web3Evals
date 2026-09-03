@@ -12,3 +12,17 @@
 
 [context.branch-deploy.environment]
   ELEVENTY_ENV = "preview"
+
+# Umami Cloud analytics, proxied through our own domain so the tracker is
+# first-party (keeps CSP at 'self' and avoids ad-blocker blocklists).
+[[redirects]]
+  from = "/stats/script.js"
+  to = "https://cloud.umami.is/script.js"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/stats/api/send"
+  to = "https://cloud.umami.is/api/send"
+  status = 200
+  force = true
